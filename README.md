@@ -2,6 +2,14 @@
 
 Ngaithla teh is a small community music library built with Flask, vanilla JavaScript, and MariaDB/MySQL. Users can create accounts, upload audio, browse tracks, and leave one editable star rating with an optional written review per song.
 
+## Database ER Diagram
+
+The database structure is documented using a Chen-notation-style ER diagram:
+
+![Ngaithla teh database ER diagram](docs/database-erd.jpg)
+
+The editable diagrams.net source is available at [docs/database-erd.drawio](docs/database-erd.drawio).
+
 ## Requirements
 
 - Python 3.10 or newer

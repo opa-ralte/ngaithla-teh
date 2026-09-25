@@ -1,0 +1,172 @@
+<mxfile host="app.diagrams.net" modified="2026-09-25T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="Database ERD" id="db-erd-1">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ================= ENTITIES ================= -->
+        <mxCell id="n_users" value="USERS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="460" y="220" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n_songs" value="SONGS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="780" y="460" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n_ratings" value="RATINGS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="120" y="460" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ================= RELATIONSHIPS ================= -->
+        <mxCell id="n_uploads" value="uploads" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="655" y="335" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n_gives" value="gives" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="245" y="335" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n_receives" value="receives" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="460" width="110" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ================= USERS ATTRIBUTES ================= -->
+        <mxCell id="attr_users_id" value="id (PK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=4;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="80" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_users_username" value="username (UK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_users_password" value="password_hash" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="80" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_users_created" value="created_at" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="740" y="80" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ================= SONGS ATTRIBUTES ================= -->
+        <mxCell id="attr_songs_id" value="id (PK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=4;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_songs_uploader" value="uploader_id (FK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="600" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_songs_title" value="title" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="970" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_songs_artist" value="artist" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_songs_filepath" value="filepath" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="680" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_songs_uploaded_at" value="uploaded_at" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="970" y="680" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ================= RATINGS ATTRIBUTES ================= -->
+        <mxCell id="attr_ratings_id" value="id (PK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=4;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="0" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_ratings_song_id" value="song_id (FK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_ratings_user_id" value="user_id (FK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_ratings_stars" value="stars (1..5)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="0" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_ratings_review" value="review_text" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="680" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_ratings_created" value="created_at" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="680" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_ratings_uk" value="song_id + user_id (UK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="760" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ================= NOTE ================= -->
+        <mxCell id="note1" value="song_ratings_summary is a derived view based on SONGS and RATINGS. (Not a stored table &#10;- do not add as an entity.)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=none;strokeColor=#666666;dashed=1;fontSize=12;fontStyle=2;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="380" y="800" width="440" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ================= RELATIONSHIP CONNECTORS w/ CARDINALITY ================= -->
+        <mxCell id="e_users_uploads" value="1" style="endArrow=none;html=1;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n_users" target="n_uploads">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_uploads_songs" value="N" style="endArrow=none;html=1;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n_uploads" target="n_songs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_users_gives" value="1" style="endArrow=none;html=1;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n_users" target="n_gives">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gives_ratings" value="N" style="endArrow=none;html=1;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n_gives" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_songs_receives" value="1" style="endArrow=none;html=1;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n_songs" target="n_receives">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_receives_ratings" value="N" style="endArrow=none;html=1;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n_receives" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ATTRIBUTE CONNECTORS (USERS) ================= -->
+        <mxCell id="e_au1" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_users_id" target="n_users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_au2" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_users_username" target="n_users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_au3" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_users_password" target="n_users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_au4" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_users_created" target="n_users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ATTRIBUTE CONNECTORS (SONGS) ================= -->
+        <mxCell id="e_as1" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_songs_id" target="n_songs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_as2" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_songs_uploader" target="n_songs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_as3" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_songs_title" target="n_songs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_as4" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_songs_artist" target="n_songs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_as5" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_songs_filepath" target="n_songs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_as6" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_songs_uploaded_at" target="n_songs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ================= ATTRIBUTE CONNECTORS (RATINGS) ================= -->
+        <mxCell id="e_ar1" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_ratings_id" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ar2" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_ratings_song_id" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ar3" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_ratings_user_id" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ar4" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_ratings_stars" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ar5" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_ratings_review" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ar6" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_ratings_created" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ar7" style="endArrow=none;html=1;" edge="1" parent="1" source="attr_ratings_uk" target="n_ratings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
