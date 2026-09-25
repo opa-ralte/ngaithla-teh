@@ -1,3 +1,13 @@
+const audioPlayers = [...document.querySelectorAll('audio')];
+
+audioPlayers.forEach((player) => {
+    player.addEventListener('play', () => {
+        audioPlayers.forEach((otherPlayer) => {
+            if (otherPlayer !== player) otherPlayer.pause();
+        });
+    });
+});
+
 document.querySelectorAll('.song-card').forEach((card) => {
     const toggle = card.querySelector('.rate-toggle');
     const form = card.querySelector('.rating-form');
