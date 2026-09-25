@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Ngaithla teh{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<header class="site-header">
+    <div class="shell header-inner">
+        <a class="brand" href="{{ url_for('index') }}">Ngaithla teh</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="{{ url_for('index') }}">Music</a>
+            {% if current_username %}
+                <a href="{{ url_for('upload') }}">Upload</a>
+                <span class="user-name">Hi, {{ current_username }}</span>
+                <form method="post" action="{{ url_for('logout') }}"><button class="link-button" type="submit">Log out</button></form>
+            {% else %}
+                <a href="{{ url_for('login') }}">Log in</a>
+                <a class="nav-cta" href="{{ url_for('register') }}">Join now</a>
+            {% endif %}
+        </nav>
+    </div>
+</header>
+<main class="shell page-content">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-stack" aria-live="polite">
+            {% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</main>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

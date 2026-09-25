@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block title %}Log in | Ngaithla teh{% endblock %}
+{% block content %}<section class="auth-panel"><p class="eyebrow">Welcome back</p><h1>Log in to Ngaithla teh</h1><form method="post" class="form-card"><label for="username">Username</label><input id="username" name="username" required autofocus><label for="password">Password</label><input id="password" name="password" type="password" required><button class="button" type="submit">Log in</button></form><p class="form-footnote">New here? <a href="{{ url_for('register') }}">Create an account</a>.</p></section>{% endblock %}
