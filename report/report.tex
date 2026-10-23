@@ -1,9 +1,11 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
-\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[a4paper,margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH]-\THEYEAR}
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{graphicx}
@@ -24,7 +26,7 @@
 
 \hypersetup{
   pdftitle={Ngaithla teh Project Report},
-  pdfauthor={Project Team},
+  pdfauthor={Vanlalawmpuia Ralte},
   colorlinks=true,
   linkcolor=brandpurple,
   urlcolor=brandpurple
@@ -49,61 +51,147 @@
   stringstyle=\color{black!70}
 }
 
+\newcommand{\studentName}{Vanlalawmpuia Ralte (Opa)}
+\newcommand{\studentUSN}{U25UV24T029118}
+\newcommand{\currentSemester}{V Semester}
+\newcommand{\studentBranch}{BTech (CSE)}
+\newcommand{\department}{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}
+\newcommand{\projectTitle}{NGAITHLA TEH - A MUSIC RATING APP}
+\newcommand{\academicYear}{2026-27}
+\newcommand{\guideName}{Sangeetha U}
+\newcommand{\guideDesignation}{Faculty}
+\newcommand{\chairpersonName}{Dr. S H Manjulla}
+\newcommand{\chairpersonDesignation}{Professor \& Chairperson}
 \newcommand{\projectname}{Ngaithla teh}
-\newcommand{\placeholder}[2]{%
-  \begin{figure}[H]
-    \centering
-    \fcolorbox{black!25}{codebg}{\parbox[c][35mm][c]{0.82\textwidth}{\centering\textit{#1}}}
-    \caption{#2}
-  \end{figure}%
-}
-
 \title{\textbf{Ngaithla teh}\\[0.4em]\large Community Music Library}
-\author{Project Report}
+\author{Vanlalawmpuia Ralte}
 \date{September 2026}
 
 \begin{document}
 
 \begin{titlepage}
   \centering
-  \vspace*{30mm}
-  {\Huge\bfseries \projectname\par}
-  \vspace{8mm}
-  {\Large Community Music Library\par}
-  \vspace{20mm}
-  {\large Project Report\par}
+  {\large\bfseries\itshape UNIVERSITY OF VISVESVARAYA COLLEGE OF ENGINEERING\par}
+  \vspace{0.1cm}
+  {\bfseries\itshape \department\par}
+  \vspace{0.1cm}
+  {\small\itshape K.R. Circle, Bengaluru -- 560001\par}
+
+  \vspace{4.5cm}
+  {\large A DBMS Mini-Project Report on\par}
+  \vspace{0.4cm}
+  {\Large\bfseries\itshape \projectTitle\par}
+
+  \vspace{3.5cm}
+  {\large Submitted by\par}
+  \vspace{0.5cm}
+  {\large\bfseries\itshape \studentName\ (\studentUSN)\par}
+  {\large\bfseries\itshape \currentSemester, \studentBranch\par}
+
   \vfill
-  \begin{tabular}{rl}
-    Author: & Project Team \\
-    Date: & September 2026 \\
-    Version: & 1.0
-  \end{tabular}
+  {\large Under the guidance of\par}
+  \vspace{0.5cm}
+  {\large\bfseries\itshape \guideName\par}
+  {\large\itshape \guideDesignation\par}
+  {\large\bfseries\itshape Department of Computer Science and Engineering\par}
+  {\large\bfseries\itshape UVCE\par}
+
+  \vfill
+  {\large \monthyeardate\today\par}
 \end{titlepage}
 
+\clearpage
+\pagestyle{empty}
+
+\begin{center}
+  {\large\bfseries\itshape UNIVERSITY OF VISVESVARAYA COLLEGE OF ENGINEERING\par}
+  \vspace{0.1cm}
+  {\bfseries\itshape \department\par}
+  \vspace{0.6cm}
+  {\small\itshape K.R. Circle, Bengaluru -- 560001\par}
+  \vspace{0.8cm}
+  \includegraphics[height=1.8in]{../docs/uvce logo.png}\par
+  \vspace{0.4cm}
+  {\Large\bfseries\underline{CERTIFICATE}\par}
+\end{center}
+
+\vspace{1cm}
+
+\noindent This is to certify that {\bfseries\itshape \studentName} from
+{\bfseries\itshape \currentSemester}, \studentBranch, bearing the register number
+{\bfseries \studentUSN} has submitted the DBMS Mini-Project Report on
+{\bfseries\itshape ``\projectTitle''}, in partial fulfilment for the DBMS Lab,
+prescribed by the University of Visvesvaraya College of Engineering for the
+academic year \academicYear.
+
+\vspace{5cm}
+
+\begin{table}[h!]
+  \centering
+  \small
+  \begin{tabular}{cc}
+    \makebox[3.2in][c]{{\bfseries\itshape \guideName}} &
+    \makebox[3.2in][c]{{\bfseries\itshape \chairpersonName}} \\
+    \makebox[3.2in][c]{{\itshape \guideDesignation}} &
+    \makebox[3.2in][c]{{\itshape \chairpersonDesignation}} \\
+    \makebox[3.2in][c]{Dept. of CSE,} &
+    \makebox[3.2in][c]{Dept. of CSE,} \\
+    \makebox[3.2in][c]{UVCE} & \makebox[3.2in][c]{UVCE}
+  \end{tabular}
+\end{table}
+
+\vfill
+\noindent {\bfseries\itshape Examiners:}
+
+\vspace{1.2cm}
+\noindent 1. \dotfill \hspace{1.5in} 2. \dotfill
+
+\clearpage
+
+\begin{center}
+  {\Large\bfseries\underline{\itshape ACKNOWLEDGEMENT}\par}
+\end{center}
+
+\vspace{1cm}
+
+\noindent I sincerely thank {\bfseries\itshape \guideName} for her valuable
+guidance, encouragement, and support throughout this project.
+
+\vspace{2.5cm}
+\begin{flushright}
+  \small\bfseries\itshape
+  \begin{tabular}{r}
+    \studentName \\
+    (\studentUSN)
+  \end{tabular}
+\end{flushright}
+
+\clearpage
+\pagestyle{fancy}
 \tableofcontents
 \newpage
 
 \section{Abstract}
-\projectname{} is a web-based community music library that allows users to create accounts, upload audio tracks, browse shared music, play tracks in the browser, and submit one editable star rating with an optional review for each song. The system was implemented using Flask and Python on the server, vanilla JavaScript and HTML/CSS in the browser, and MariaDB or MySQL for persistent storage. This report presents the system requirements, design, implementation, security considerations, testing approach, limitations, and possible future improvements.
+\projectname{} is a small web-based music library for sharing audio, listening in the browser, and giving feedback. It uses Flask, vanilla JavaScript, and MariaDB/MySQL. Users can register, upload tracks, and submit one editable rating and review per song.
 
 \section{Introduction}
 
 \subsection{Background}
-Music sharing platforms can be complex and difficult to adapt for a small community. \projectname{} focuses on the essential interactions: sharing a track, listening to it, and receiving feedback from other members. The result is a deliberately small application with a clear user workflow and a relational database that preserves ownership and rating integrity.
+\projectname{} focuses on three essential interactions: sharing a track, listening to it, and receiving feedback. Its small scope keeps the workflow clear while the relational database preserves ownership and rating integrity.
 
 \subsection{Aim and objectives}
-The aim of the project is to provide a usable community music library with authenticated participation. The objectives are to:
+The project provides a community music library with authenticated participation. Its objectives are to:
 \begin{itemize}[leftmargin=*]
   \item allow visitors to browse available songs and play audio in a web browser;
   \item allow new users to register and existing users to log in and log out;
   \item allow authenticated users to upload a song with a title and artist name;
   \item allow authenticated users to rate a song from one to five stars and add an optional review;
   \item prevent duplicate ratings from the same user for the same song; and
-  \item store passwords and uploaded-file paths using safer application practices.
+  \item store passwords and uploaded-file paths safely.
 \end{itemize}
 
 \subsection{Scope}
-The implemented scope includes account management, song metadata, local audio storage, audio playback, aggregate ratings, reviews, and a responsive browser interface. Playlists, search, moderation, cloud storage, and administrative tools are outside the current scope.
+The scope includes accounts, song metadata, local audio storage, playback, ratings, reviews, and a responsive interface. Playlists, search, moderation, cloud storage, and administration are outside the current scope.
 
 \section{Requirements Analysis}
 
@@ -120,12 +208,12 @@ The implemented scope includes account management, song metadata, local audio st
 \end{enumerate}
 
 \subsection{Non-functional requirements}
-The application should be simple to use, responsive on smaller screens, compatible with MariaDB and MySQL, and configurable through environment variables. Database queries should use parameters, passwords should not be stored in plaintext, and uploaded filenames should be handled safely.
+The application should be simple, responsive, compatible with MariaDB and MySQL, and configurable through environment variables. Queries use parameters, passwords are hashed, and uploaded filenames are handled safely.
 
 \section{System Design}
 
 \subsection{Architecture}
-The system follows a small three-layer web architecture. The browser renders server-side templates and supplies interactive rating behavior through JavaScript. Flask handles routes, sessions, validation, and file serving. MariaDB or MySQL stores users, songs, and ratings, while uploaded audio files are stored in the configured upload directory.
+The browser renders Jinja templates and provides audio and rating interactions. Flask handles routes, sessions, validation, and file serving. MariaDB/MySQL stores users, songs, and ratings; audio files are stored in the configured upload directory.
 
 \begin{figure}[H]
 \centering
@@ -146,50 +234,60 @@ The system follows a small three-layer web architecture. The browser renders ser
 \end{figure}
 
 \subsection{Database design}
-The database contains three primary entities. A user can upload many songs and submit many ratings. A song belongs to one uploader and can receive many ratings. The unique pair \texttt{(song\_id, user\_id)} ensures that each user has at most one rating for a particular song. The \texttt{song\_ratings\_summary} view provides a derived aggregate of average rating and rating count.
+The database contains users, songs, and ratings. Users can upload songs and submit ratings; each song belongs to one uploader. The unique pair \texttt{(song\_id, user\_id)} allows one editable rating per user and song. The \texttt{song\_ratings\_summary} view provides average ratings and counts.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[
-  entity/.style={draw, rectangle, minimum width=25mm, minimum height=10mm, align=center, fill=brandpurple!12},
-  relation/.style={draw, diamond, aspect=2, minimum width=24mm, align=center, fill=brandgold!20},
-  attr/.style={draw, ellipse, minimum width=21mm, minimum height=7mm, align=center, font=\scriptsize, fill=black!4},
-  line/.style={-}
-]
-  \node[entity] (users) {USERS};
-  \node[entity, below left=27mm and 24mm of users] (ratings) {RATINGS};
-  \node[entity, below right=27mm and 24mm of users] (songs) {SONGS};
-  \node[relation, below=10mm of users] (uploads) {uploads};
-  \node[relation, left=18mm of uploads] (gives) {gives};
-  \node[relation, right=18mm of uploads] (receives) {receives};
-  \draw[line] (users) -- node[above left, font=\scriptsize]{1} (gives);
-  \draw[line] (gives) -- node[above left, font=\scriptsize]{N} (ratings);
-  \draw[line] (users) -- node[above right, font=\scriptsize]{1} (uploads);
-  \draw[line] (uploads) -- node[above right, font=\scriptsize]{N} (songs);
-  \draw[line] (ratings) -- node[above, font=\scriptsize]{N} (receives);
-  \draw[line] (receives) -- node[above, font=\scriptsize]{1} (songs);
-  \node[attr, above=8mm of users] (uid) {id (PK)};
-  \node[attr, left=8mm of users] (uname) {username (UK)};
-  \node[attr, below left=8mm of ratings] (rid) {id (PK)};
-  \node[attr, below=8mm of ratings] (stars) {stars 1--5};
-  \node[attr, below right=8mm of songs] (sid) {id (PK)};
-  \node[attr, right=8mm of songs] (title) {title};
-  \draw[line] (users) -- (uid); \draw[line] (users) -- (uname);
-  \draw[line] (ratings) -- (rid); \draw[line] (ratings) -- (stars);
-  \draw[line] (songs) -- (sid); \draw[line] (songs) -- (title);
-\end{tikzpicture}
+\includegraphics[width=\textwidth]{../docs/final.drawio.png}
 \caption{Simplified entity-relationship model}
 \end{figure}
 
 \section{Implementation}
 
 \subsection{Backend}
-The Flask application is implemented in \texttt{app.py}. The root route retrieves songs, uploader names, and aggregate ratings using a grouped SQL query. Registration validates required fields and stores a Werkzeug password hash. Login verifies the hash and stores the authenticated user's ID and username in the session.
+The Flask application in \texttt{app.py} retrieves songs, uploaders, and rating aggregates with SQL. Registration validates fields and stores a Werkzeug password hash. Login verifies the hash and stores the user identity in the session.
 
-The upload route is protected by the \texttt{login\_required} decorator. It uses \texttt{secure\_filename} and prefixes the stored filename with the user ID and a random value. Rating submissions accept JSON or form data, validate the star range, confirm that the song exists, and use an upsert operation so repeated submissions update the existing row.
+The upload route uses \texttt{login\_required}, \texttt{secure\_filename}, and a user/random filename prefix. Rating submissions validate the song and star range, then use an upsert so repeated submissions update the existing row.
 
 \subsection{Frontend}
-The interface uses Jinja templates extending \texttt{base.html}. The library page presents song metadata, an HTML audio player, the average rating, and the number of ratings. The JavaScript file provides two small interactions: only one audio player plays at a time, and rating forms allow star selection and asynchronous submission without reloading the page. CSS media queries provide a mobile layout for navigation, song cards, and rating panels.
+Jinja templates extend \texttt{base.html}. The library displays song metadata, an HTML audio player, and rating summaries. \texttt{app.js} coordinates audio playback and submits ratings asynchronously. CSS media queries support smaller screens.
+
+\section{User Interface Evidence}
+The following screenshots demonstrate the main user-facing workflows of
+\projectname{}.
+
+\subsection{User registration}
+The registration page provides a focused form for creating an account with a
+unique username and password. Existing members can use the login link below the
+form.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{../docs/registration-page.png}
+\caption{Registration page for creating a new user account}
+\end{figure}
+
+\subsection{Song upload}
+Authenticated users can add a song by entering its title and artist name and
+selecting an audio file. The upload form makes the contribution workflow
+explicit before the file is stored in the application.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{../docs/upload-form.png}
+\caption{Upload form for adding a song to the community library}
+\end{figure}
+
+\subsection{Song rating and review}
+The song view combines browser audio playback with the rating interface. A
+listener can select a one-to-five-star rating, write an optional review, and
+save the feedback for the selected song.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{../docs/rating-song.png}
+\caption{Song playback and rating interface}
+\end{figure}
 
 \subsection{Technology stack}
 \begin{table}[H]
@@ -211,61 +309,26 @@ Werkzeug & Password hashing and safe filename handling \\
 \end{table}
 
 \section{Testing and Evaluation}
-Testing should be performed through the browser with a running database and should record both the expected and observed results. The following test matrix covers the main workflows.
+The main workflows can be checked through a browser connected to the configured database.
 
 \begin{table}[H]
 \small
 \centering
 \begin{tabularx}{\textwidth}{p{0.25\textwidth}X p{0.14\textwidth}}
 \toprule
-\textbf{Test case} & \textbf{Expected result} & \textbf{Status} \\
+\textbf{Test} & \textbf{Expected result} \\
 \midrule
-Valid registration & A new account is created and the user is directed to login. & To verify \\
-Duplicate username & Registration is rejected with an explanatory message. & To verify \\
-Valid login & The user session is created and authenticated navigation is shown. & To verify \\
-Invalid login & The user remains unauthenticated and receives an error message. & To verify \\
-Unauthenticated upload & The user is redirected to login. & To verify \\
-Valid upload & The audio file is stored and the song appears in the library. & To verify \\
-Audio playback & The browser audio control plays the selected track. & To verify \\
-Valid rating & The average rating and count update after submission. & To verify \\
-Repeated rating & The existing rating is updated rather than duplicated. & To verify \\
-Invalid star value & A value outside one to five is rejected with a 400 response. & To verify \\
+Registration and login & Valid users authenticate; duplicate or invalid credentials are rejected. \\
+Upload and playback & An authenticated user can upload a track and play it in the browser. \\
+Rating & A valid rating updates the summary and repeated submission does not duplicate it. \\
+Invalid access and input & Protected routes redirect unauthenticated users and invalid stars are rejected. \\
 \bottomrule
 \end{tabularx}
-\caption{Functional test matrix}
+\caption{Concise functional test matrix}
 \end{table}
 
-The status column is intentionally marked \emph{To verify} until the test cases are executed against the configured database. It should be updated with the observed result before final submission.
-
-\subsection{Evidence to attach}
-The supplied interface screenshots are stored in the repository's \texttt{docs/} directory and included below. They document the main visitor, authentication, upload, and rating workflows.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{../docs/homepage-with-songs.png}
-  \caption{Homepage showing uploaded songs, playback controls, and rating summaries}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.82\textwidth]{../docs/registration-page.png}
-  \caption{Registration page}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.82\textwidth]{../docs/upload-form.png}
-  \caption{Authenticated song upload form}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{../docs/rating-song.png}
-  \caption{Rating form with selected stars and written review}
-\end{figure}
-
 \section{Security and Data Integrity}
-Several implementation choices reduce common risks:
+The implementation reduces common risks by using:
 \begin{itemize}[leftmargin=*]
   \item Passwords are stored as hashes using Werkzeug rather than as plaintext.
   \item SQL values are passed as parameters to PyMySQL queries.
@@ -276,22 +339,19 @@ Several implementation choices reduce common risks:
   \item The unique rating key prevents duplicate ratings for one user and song.
 \end{itemize}
 
-The current prototype also has important deployment limitations. The default development secret key must be replaced through configuration. There is no explicit upload size limit, MIME-type verification, CSRF protection, or moderation workflow. These should be addressed before exposing the application to untrusted users.
+Before deployment, the development secret key must be replaced. Upload size and MIME type checks, CSRF protection, and moderation are also still required.
 
 \section{Limitations and Future Work}
-The project meets its core library requirements but can be extended in several practical directions:
+Future work includes:
 \begin{enumerate}[leftmargin=*]
-  \item Add server-side file-size and content-type validation.
-  \item Add CSRF tokens to state-changing forms and requests.
-  \item Add search, sorting, pagination, and genre metadata.
-  \item Add user profiles, playlists, and track ownership management.
-  \item Move audio storage to an object-storage service for production use.
-  \item Add automated unit and integration tests to complement manual testing.
-  \item Add administration and reporting tools for inappropriate content.
+  \item server-side file validation and CSRF protection;
+  \item search, sorting, pagination, and genre metadata;
+  \item profiles, playlists, moderation, and administration; and
+  \item automated tests and production object storage.
 \end{enumerate}
 
 \section{Conclusion}
-\projectname{} provides a focused implementation of a community music library. Its Flask backend separates authentication, upload, playback, and rating responsibilities; its relational schema models ownership and feedback clearly; and its browser interface supports the essential listening workflow. The project is suitable as a working prototype and a foundation for future improvements in validation, moderation, search, testing, and deployment.
+\projectname{} is a focused community music library prototype. Flask, a relational schema, and a responsive browser interface provide the essential workflow for authentication, upload, playback, and feedback. Stronger validation, moderation, testing, and deployment controls are the main next steps.
 
 \appendix
 \section{Project Evidence Map}
