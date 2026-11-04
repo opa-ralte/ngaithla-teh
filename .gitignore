@@ -31,3 +31,4 @@ instance/
 
 # lemme add the pdf too
 *.pdf
+/docs/dont_track 

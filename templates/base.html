@@ -17,6 +17,7 @@
             <a href="{{ url_for('index') }}">Music</a>
             {% if current_username %}
                 <a href="{{ url_for('upload') }}">Upload</a>
+                {% if current_is_admin %}<a href="{{ url_for('admin_dashboard') }}">Admin</a>{% endif %}
                 <span class="user-name">Hi, {{ current_username }}</span>
                 <form method="post" action="{{ url_for('logout') }}"><button class="link-button" type="submit">Log out</button></form>
             {% else %}

@@ -110,3 +110,47 @@ The app reads `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `SECRET
 - Uploaded files are stored in `uploads/`, which is created automatically and ignored by Git.
 - The schema has a unique `(song_id, user_id)` key. Rating submissions use that key to update an existing rating instead of creating duplicates.
 - The supplied schema's `CHECK (stars BETWEEN 1 AND 5)` constraint is supported by current MariaDB and MySQL releases.
+
+## Administration
+
+Administrators can review library activity and manage users, songs, and ratings at `/admin`.
+Administrator access is controlled by the `users.is_admin` column and is checked on every
+admin request. Public registration never grants administrator access.
+
+For a new database, load `schema.sql` as usual. The schema includes the
+`users.is_admin` column. If the database was created with an older version of
+the schema, rerunning `schema.sql` will not add the missing column because the
+table already exists. Apply this migration to the same database configured by
+`DB_NAME` before creating an administrator:
+
+```sql
+ALTER TABLE users ADD COLUMN is_admin TINYINT(1) NOT NULL DEFAULT 0;
+```
+
+For example, with the default database name:
+
+```bash
+mariadb -u music_app -p music_app
+```
+
+```sql
+SHOW COLUMNS FROM users LIKE 'is_admin';
+ALTER TABLE users ADD COLUMN is_admin TINYINT(1) NOT NULL DEFAULT 0;
+SHOW COLUMNS FROM users LIKE 'is_admin';
+EXIT;
+```
+
+Run the `ALTER TABLE` statement only when the first `SHOW COLUMNS` query
+returns no rows. If the column already exists, skip the migration.
+
+Create the first administrator from the project directory using the Flask CLI. The
+password is prompted securely and is stored only as a hash:
+
+```bash
+flask --app app create-admin
+```
+
+The admin area includes CSRF-protected actions for deleting songs, users, and ratings,
+as well as promoting and demoting users. Deleting a user also deletes their songs and
+ratings because of the existing foreign-key cascade rules. The final administrator
+cannot remove their own administrator access or be deleted.

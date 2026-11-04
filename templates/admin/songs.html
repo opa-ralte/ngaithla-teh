@@ -1,0 +1,8 @@
+{% extends "admin/base.html" %}
+{% block title %}Manage songs | Ngaithla teh{% endblock %}
+{% block admin_content %}
+<div class="page-heading"><div><p class="eyebrow">Moderation</p><h1>Manage songs</h1></div></div>
+<form class="admin-search" method="get"><input name="q" value="{{ search }}" placeholder="Search title, artist, or uploader" aria-label="Search songs"><button class="button small" type="submit">Search</button></form>
+{% if songs %}<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Song</th><th>Uploader</th><th>Rating</th><th>Uploaded</th><th>Actions</th></tr></thead><tbody>{% for song in songs %}<tr><td><strong>{{ song.title }}</strong><br><span class="muted">{{ song.artist }}</span></td><td>{{ song.uploader }}</td><td>{{ '%.1f'|format(song.avg_rating|float) }} ({{ song.rating_count }})</td><td>{{ song.uploaded_at }}</td><td class="table-actions"><a href="{{ url_for('media', filename=song.filepath) }}" target="_blank" rel="noopener">Play</a><form method="post" action="{{ url_for('admin_delete_song', song_id=song.id) }}" onsubmit="return confirm('Delete this song and its ratings?');"><input type="hidden" name="_csrf_token" value="{{ csrf_token() }}"><button class="danger-link" type="submit">Delete</button></form></td></tr>{% endfor %}</tbody></table></div>{% else %}<div class="empty-state"><h2>No matching songs.</h2><p>Try a different search.</p></div>{% endif %}
+{% include "admin/_pagination.html" %}
+{% endblock %}

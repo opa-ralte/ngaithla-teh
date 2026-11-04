@@ -1,0 +1,8 @@
+{% extends "admin/base.html" %}
+{% block title %}Manage users | Ngaithla teh{% endblock %}
+{% block admin_content %}
+<div class="page-heading"><div><p class="eyebrow">Moderation</p><h1>Manage users</h1></div></div>
+<form class="admin-search" method="get"><input name="q" value="{{ search }}" placeholder="Search username" aria-label="Search users"><button class="button small" type="submit">Search</button></form>
+{% if users %}<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>User</th><th>Role</th><th>Uploads</th><th>Ratings</th><th>Actions</th></tr></thead><tbody>{% for user in users %}<tr><td><strong>{{ user.username }}</strong><br><span class="muted">Joined {{ user.created_at }}</span></td><td>{% if user.is_admin %}Administrator{% else %}Member{% endif %}</td><td>{{ user.song_count }}</td><td>{{ user.rating_count }}</td><td class="table-actions"><form method="post" action="{{ url_for('admin_toggle_user', user_id=user.id) }}"><input type="hidden" name="_csrf_token" value="{{ csrf_token() }}"><button class="text-button" type="submit">{% if user.is_admin %}Remove admin{% else %}Make admin{% endif %}</button></form><form method="post" action="{{ url_for('admin_delete_user', user_id=user.id) }}" onsubmit="return confirm('Delete this user, their songs, and their ratings?');"><input type="hidden" name="_csrf_token" value="{{ csrf_token() }}"><button class="danger-link" type="submit">Delete</button></form></td></tr>{% endfor %}</tbody></table></div>{% else %}<div class="empty-state"><h2>No matching users.</h2><p>Try a different search.</p></div>{% endif %}
+{% include "admin/_pagination.html" %}
+{% endblock %}

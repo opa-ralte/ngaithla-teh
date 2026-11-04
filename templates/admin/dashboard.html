@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% block title %}Admin dashboard | Ngaithla teh{% endblock %}
+{% block admin_content %}
+<div class="page-heading"><div><p class="eyebrow">Admin dashboard</p><h1>Keep the library healthy.</h1><p class="intro">Review community activity and moderate content from one place.</p></div></div>
+<section class="stat-grid" aria-label="Library statistics">
+    <div class="stat-card"><strong>{{ stats.user_count }}</strong><span>Users</span></div>
+    <div class="stat-card"><strong>{{ stats.song_count }}</strong><span>Songs</span></div>
+    <div class="stat-card"><strong>{{ stats.rating_count }}</strong><span>Ratings</span></div>
+    <div class="stat-card"><strong>{{ '%.1f'|format(stats.average_rating|float) }}</strong><span>Average rating</span></div>
+</section>
+<section class="admin-panels">
+    <div class="admin-panel"><h2>Recent users</h2>{% if recent_users %}<ul class="activity-list">{% for user in recent_users %}<li><strong>{{ user.username }}</strong><span>{{ user.created_at }}</span></li>{% endfor %}</ul>{% else %}<p class="muted">No users yet.</p>{% endif %}</div>
+    <div class="admin-panel"><h2>Recent uploads</h2>{% if recent_songs %}<ul class="activity-list">{% for song in recent_songs %}<li><strong>{{ song.title }}</strong><span>by {{ song.uploader }}</span></li>{% endfor %}</ul>{% else %}<p class="muted">No songs yet.</p>{% endif %}</div>
+    <div class="admin-panel"><h2>Recent ratings</h2>{% if recent_ratings %}<ul class="activity-list">{% for rating in recent_ratings %}<li><strong>{{ rating.song_title }} · {{ rating.stars }}/5</strong><span>by {{ rating.username }}</span></li>{% endfor %}</ul>{% else %}<p class="muted">No ratings yet.</p>{% endif %}</div>
+</section>
+{% endblock %}

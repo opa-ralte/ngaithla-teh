@@ -1,0 +1,7 @@
+{% if total > per_page %}
+<nav class="pagination" aria-label="Pagination">
+    {% if page > 1 %}<a href="?q={{ search|urlencode }}&page={{ page - 1 }}">Previous</a>{% endif %}
+    <span>Page {{ page }}</span>
+    {% if page * per_page < total %}<a href="?q={{ search|urlencode }}&page={{ page + 1 }}">Next</a>{% endif %}
+</nav>
+{% endif %}

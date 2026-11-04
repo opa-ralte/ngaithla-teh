@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="admin-layout">
+    <aside class="admin-nav" aria-label="Administration">
+        <p class="eyebrow">Administration</p>
+        <a href="{{ url_for('admin_dashboard') }}">Overview</a>
+        <a href="{{ url_for('admin_songs') }}">Songs</a>
+        <a href="{{ url_for('admin_users') }}">Users</a>
+        <a href="{{ url_for('admin_ratings') }}">Ratings and reviews</a>
+    </aside>
+    <div class="admin-main">{% block admin_content %}{% endblock %}</div>
+</section>
+{% endblock %}

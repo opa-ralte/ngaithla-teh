@@ -1,0 +1,8 @@
+{% extends "admin/base.html" %}
+{% block title %}Moderate ratings | Ngaithla teh{% endblock %}
+{% block admin_content %}
+<div class="page-heading"><div><p class="eyebrow">Moderation</p><h1>Ratings and reviews</h1></div></div>
+<form class="admin-search" method="get"><input name="q" value="{{ search }}" placeholder="Search song, user, or review" aria-label="Search ratings"><button class="button small" type="submit">Search</button></form>
+{% if ratings %}<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Song</th><th>User</th><th>Rating</th><th>Review</th><th>Actions</th></tr></thead><tbody>{% for rating in ratings %}<tr><td>{{ rating.song_title }}</td><td>{{ rating.username }}</td><td>{{ rating.stars }}/5</td><td>{{ rating.review_text or '—' }}</td><td><form method="post" action="{{ url_for('admin_delete_rating', rating_id=rating.id) }}" onsubmit="return confirm('Delete this rating and review?');"><input type="hidden" name="_csrf_token" value="{{ csrf_token() }}"><button class="danger-link" type="submit">Delete</button></form></td></tr>{% endfor %}</tbody></table></div>{% else %}<div class="empty-state"><h2>No matching ratings.</h2><p>Try a different search.</p></div>{% endif %}
+{% include "admin/_pagination.html" %}
+{% endblock %}

@@ -28,3 +28,36 @@ a:hover { text-decoration: underline; }
 .flash-stack { display: grid; gap: 8px; margin-bottom: 22px; }.flash { padding: 11px 14px; border-left: 4px solid var(--purple); background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.05); }.flash.error { border-color: #b42318; }.flash.success { border-color: #25843e; }
 .auth-panel, .upload-panel { max-width: 610px; margin: 25px auto; }.form-card { display: grid; gap: 8px; margin-top: 25px; padding: 28px; background: #fff; border: 1px solid var(--line); box-shadow: 0 2px 5px rgba(35,25,40,.06); }.form-card label { margin-top: 8px; font-size: .9rem; font-weight: 700; }.form-card input { min-height: 42px; padding: 9px 11px; border: 1px solid #c8c4c8; border-radius: 3px; background: #fff; font: inherit; }.form-card input:focus, .rating-form textarea:focus { outline: 2px solid rgba(123,0,153,.2); border-color: var(--purple); }.form-card .button { margin-top: 12px; justify-self: start; }.form-footnote { margin-top: 18px; color: var(--muted); font-size: .9rem; }.empty-state { padding: 60px 30px; text-align: center; background: #fff; border: 1px solid var(--line); }.empty-state h2 { margin-top: 0; }
 @media (max-width: 760px) { .shell { width: min(100% - 28px, 600px); }.header-inner { align-items: flex-start; flex-direction: column; padding: 17px 0; gap: 12px; }.main-nav { flex-wrap: wrap; gap: 12px 16px; }.page-content { padding-top: 32px; }.page-heading { align-items: flex-start; flex-direction: column; gap: 18px; }.song-card { grid-template-columns: 28px minmax(0, 1fr); gap: 12px; padding: 17px 14px; }.rating-panel { grid-column: 2; border-top: 1px solid #eee; border-left: 0; padding: 14px 0 0; }.song-main audio { width: 100%; } }
+
+.admin-layout { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; }
+.admin-nav { display: grid; align-content: start; gap: 9px; padding: 20px; background: #fff; border: 1px solid var(--line); }
+.admin-nav .eyebrow { margin-bottom: 5px; }
+.admin-nav a { padding: 5px 0; font-weight: 700; }
+.admin-main { min-width: 0; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+.stat-card { display: grid; gap: 3px; padding: 20px; background: #fff; border: 1px solid var(--line); }
+.stat-card strong { color: var(--purple); font-size: 2rem; line-height: 1; }
+.stat-card span, .muted { color: var(--muted); font-size: .86rem; }
+.admin-panels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.admin-panel { padding: 20px; background: #fff; border: 1px solid var(--line); }
+.admin-panel h2 { margin: 0 0 14px; font-size: 1.15rem; }
+.activity-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.activity-list li { display: grid; gap: 2px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+.activity-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+.activity-list span { color: var(--muted); font-size: .82rem; }
+.admin-search { display: flex; gap: 8px; margin: -12px 0 18px; }
+.admin-search input { flex: 1; min-height: 38px; padding: 8px 10px; border: 1px solid #c8c4c8; border-radius: 3px; font: inherit; }
+.admin-table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); }
+.admin-table { width: 100%; border-collapse: collapse; min-width: 680px; }
+.admin-table th, .admin-table td { padding: 13px 15px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
+.admin-table th { background: #faf9fa; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; }
+.admin-table tr:last-child td { border-bottom: 0; }
+.table-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.table-actions form { margin: 0; }
+.text-button, .danger-link { padding: 0; border: 0; background: none; cursor: pointer; font: inherit; font-weight: 700; }
+.text-button { color: var(--purple); }
+.danger-link { color: #b42318; }
+.pagination { display: flex; justify-content: center; gap: 18px; margin-top: 20px; font-weight: 700; }
+.pagination a { color: var(--purple); }
+@media (max-width: 900px) { .admin-layout { grid-template-columns: 1fr; gap: 20px; }.admin-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }.admin-nav .eyebrow { width: 100%; margin: 0; }.admin-panels { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .stat-grid { grid-template-columns: repeat(2, 1fr); }.admin-search { margin-top: 0; } }
